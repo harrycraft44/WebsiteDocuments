@@ -53,6 +53,20 @@ main{
 	margin: 0 auto;
 }
 
+
+
+@media screen and (min-width: 1200px){
+	main{
+		max-width: 90vw;
+	}
+	
+}
+
+
+
+
+
+
 section{
 	padding: 18px 0;
 	border-bottom: 1px solid rgba(255,255,255,0.04);
@@ -216,8 +230,9 @@ p{
 
 .footergrid{
 	display: grid;
-	grid-template-columns: 50% 20% 31%;
-	gap: 2vw;
+	width: 98%;
+	grid-template-columns: 35% 20% 20% 20%;
+	gap: 2%;
 	justify-content: right;
 	padding-left: 40px;
 }
@@ -322,3 +337,51 @@ p{
 	grid-template-columns: 30% 30% 30%;
 	gap: 5%;
 }
+
+
+
+
+
+.moviegrid{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 92%;
+	gap: 4%;
+	padding-right: 2%;
+	margin: 0 auto;
+}
+
+
+.moviebox{
+	display: grid;
+	grid-template-columns: 30% 70%;
+	place-items: center;
+	background-color: var(--dark);
+	width: 100%;
+	border-radius: 15px;
+	padding: 10px;
+	color: var(--text);
+}
+
+
+
+/* Small screens: show 2 movie boxes per row */
+@media screen and (max-width: 1200px){
+	.moviegrid{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Large screens: show 3 columns in 2 rows */
+@media screen and (min-width: 1201px){
+	.moviegrid{
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.moviebox h3{
+		font-size: clamp(1rem, 2vw, 1.5rem);
+	}
+	.moviebox p{
+		font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+	}
+}
+
